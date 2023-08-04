@@ -1,0 +1,645 @@
+@use 'mixins' as *;
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'typography' as *;
+@use 'variables' as *;
+
+.button-container {
+  .btn-primary {
+    min-width: 12rem;
+    min-height: 4.5rem
+  }
+
+  .btn-outline {
+    @include main-flex(center, center);
+    margin-right: 1rem;
+    padding: 0;
+    border-radius: .3rem;
+    min-width: 11.6rem;
+    color: $color-placeholder;
+
+    &.btn-export {
+      margin-right: 0;
+      height: 4.5rem;
+    }
+
+    &.btn-filter {
+      height: 4.5rem;
+
+      .material-icons-outlined {
+        font-size: $font-size-18;
+        margin-right: .5rem;
+      }
+    }
+
+    .image {
+      filter: grayscale(100%);
+    }
+
+    &.btn-delete {
+      height: 4.5rem;
+
+      .image {
+        opacity: .7;
+      }
+
+      height: 4rem;
+    }
+
+    &:hover {
+      background: rgba($color-input-border, 30%);
+    }
+  }
+
+  @include main-flex (space-between, center);
+  flex-wrap: wrap;
+
+  @media only #{$desktop-lg} {
+    @include main-flex (space-between, center);
+  }
+
+  .editndelete-buttons {
+    @include main-flex (flex-start, center);
+
+    .btn-outline {
+      margin-right: 1.5rem;
+    }
+  }
+
+  margin: 1.5rem 0;
+
+  .search-area-top {
+    @include main-flex (center, center);
+    flex-wrap: wrap;
+
+    @media only #{$desktop-md} {
+      @include main-flex (flex-end, center);
+      flex-wrap: nowrap;
+    }
+
+    .btn-outline,
+    .mat-form-field,
+    .btn-primary {
+      margin-left: .5rem;
+
+      @media only #{$desktop-md} {
+        margin-left: 1.5rem;
+      }
+    }
+
+    .btn-outline,
+    .input-outline,
+    .mat-form-field,
+    .btn-primary {
+      margin-top: .3rem;
+      margin-bottom: .3rem;
+      max-width: 25rem;
+
+      @media only #{$desktop-md} {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .input-outline {
+      width: 100%;
+      min-width: 30rem;
+
+      @media only #{$desktop-md} {
+        width: auto;
+      }
+
+      @media only #{$desktop-big} {}
+
+      height: 4.5rem;
+      border: solid 1px $white-2;
+      border-radius: 2px;
+      color: $color-text;
+      font-size: $font-size-14;
+
+      &.input-outline-search {
+        padding-left: 4rem;
+        height: 4.5rem;
+        border-radius: .3rem;
+        background: url(../../image/search.svg) 1.5rem center no-repeat;
+        background-size: 1.5rem;
+      }
+    }
+  }
+
+  .button-container-title {
+    font-size: $font-size-14;
+    font-weight: $font-weight-semiBold;
+    line-height: 3.2rem;
+    padding-right: 1rem;
+  }
+}
+
+.btn {
+  height: 3.5rem;
+  @include main-flex (center, center);
+  padding: 0 1rem;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  color: $white;
+  font-size: $font-size-13;
+  @include transition(all .2s ease-in-out);
+  font-weight: $font-weight-regular;
+  white-space: nowrap;
+
+  @media only #{$desktop-md} {
+    padding: 0 2.3rem;
+  }
+
+  &.btn-outline-green {
+    background: $white;
+    border: solid 1px $green-1;
+    color: $green-1;
+    @include main-flex (center, center);
+    font-size: $font-size-12;
+    font-weight: $font-weight-medium;
+    height: 3.5rem;
+    width: 110px;
+
+    .material-icons-outlined {
+      font-size: $font-size-14;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background: $green-1;
+      color: $white;
+    }
+  }
+
+  &.btn-outline-red {
+    background: $white;
+    border: solid 1px $red2;
+    color: $red2;
+    @include main-flex (center, center);
+    font-size: $font-size-12;
+    font-weight: $font-weight-medium;
+    height: 3.5rem;
+    width: 110px;
+
+    .material-icons-outlined {
+      font-size: $font-size-14;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background: $red2;
+      color: $white;
+    }
+  }
+
+  &.btn-primary-lite {
+    background: $color-primary-lite2;
+    color: $color-primary;
+  }
+
+  &.btn-red {
+    background: $color-danger;
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &.btn-back {
+    width: 3.6rem;
+    min-width: 3.6rem;
+    height: 3.5rem;
+    border-radius: .6rem;
+    background: $color-graybg5;
+    @include main-flex (center, center);
+    padding: 0;
+
+    &:hover {
+      background: darken($color-graybg5, 7%);
+
+      .image {
+        transform: rotate(360deg);
+        @include transition(all .2s ease-in-out);
+      }
+    }
+  }
+
+  &.btn-green {
+    background: $green-1;
+
+    &:hover {
+      background: darken($green-1, 10%);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &.btn-outline-blue {
+    font-size: $font-size-14;
+    font-weight: $font-weight-semiBold;
+  }
+
+  &.btn-outline-sub {
+    font-size: $font-size-13;
+    color: $color-primary;
+    font-weight: $font-weight-medium;
+    border: solid 1px $color-primary;
+    min-width: 12rem;
+    height: 4.1rem;
+    background: $white;
+    padding: 0 1.35rem;
+    @include transition(all .1s ease-in-out);
+    margin-right: 1rem;
+    white-space: nowrap;
+
+    .material-icons {
+      font-size: $font-size-20;
+    }
+
+    &:hover {
+      background: $color-primary;
+      color: $white;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &.btn-image {
+    background: transparent;
+    border: none;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 10rem;
+    padding: 0;
+
+    &:hover {
+      background: rgba($color-input-border, 60%);
+    }
+  }
+
+  &.btn-footer {
+    min-width: 15rem;
+    min-height: 3.5rem;
+    background: transparent;
+    border: solid 1px rgba($color-text, 60%);
+    color: $color-text;
+
+    .image {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background: rgba($color-input-border, 80%);
+    }
+  }
+
+  &.btn-outline-new {
+    width: 11rem;
+    height: 6.6rem;
+    text-align: center;
+    @include main-flex (center, center);
+    font-size: $font-size-14;
+    font-weight: $font-weight-semiBold;
+    border: solid 1px $color-input-border;
+    @include transition(all .3s ease-in-out);
+    position: relative;
+    color: $color-text;
+    background: transparent;
+    margin-right: 1.2rem;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 10rem;
+      background: url(/assets/image/tick_white.svg) no-repeat center center $green-1;
+      @include main-flex (center, center);
+      @include transition(all .2s ease-in-out);
+      background-size: 1.6rem;
+      top: -1.6rem;
+      right: 6px;
+      visibility: hidden;
+    }
+
+    &.active,
+    &:hover {
+      border: solid 1px $green-1;
+
+      &::after {
+        @include transition(all .2s ease-in-out);
+        top: 6px;
+        visibility: visible;
+      }
+    }
+  }
+
+  &.btn-white {
+    background: $white;
+    color: $color-primary;
+    width: 9.7rem;
+    height: 3.2rem;
+    padding: 0;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-14;
+
+    .material-icons {
+      font-size: $font-size-14;
+    }
+
+    &:hover {
+      background: $color-primary-lite2;
+    }
+  }
+
+  &.btn-lite {
+    background: rgba($color-primary2, 14%);
+    color: $color-primary2;
+    font-size: $font-size-60;
+    padding-bottom: 1rem;
+    width: 4rem;
+
+    &:hover {
+      background: rgba($color-primary2, 30%);
+    }
+  }
+
+  &:hover {
+    @include transition(all .3s ease-in-out);
+  }
+
+  &.btn-gray {
+    background: $color-input-border;
+    color: $color-text;
+
+    .image {
+      margin-right: .5rem;
+    }
+
+    &:hover {
+      background: rgba($color-input-border, 90%);
+    }
+
+    .material-icons {
+      font-size: $font-size-16
+    }
+
+  }
+
+  &.btn-primary {
+    background: $color-primary;
+
+    &:hover {
+      background: rgba($color-primary, 90%);
+    }
+  }
+
+  &.btn-primary2 {
+    background: $color-primary2;
+    border-radius: .5rem;
+    font-size: $font-size-13;
+    width: 100%;
+    max-width: 10.1rem;
+    height: 3.5rem;
+
+    &:hover {
+      background: rgba($color-primary2, 90%);
+    }
+  }
+
+  &.btn-secondary {
+    background: $color-primary;
+
+    &:hover {
+      background: darken($color-primary, 10%);
+    }
+  }
+
+  &.btn-small {
+    height: 2.8rem;
+    min-width: 10rem;
+
+    &.btn-active {
+      background: $color-green;
+      font-size: $font-size-15;
+
+      &:hover {
+        background: $color-green-hover;
+      }
+    }
+
+    &.btn-inactive {
+      background: $color-graybg3;
+      color: $color-graybg2;
+
+      &:hover {
+        background: $color-graybg4;
+      }
+    }
+
+    &.btn-permission {
+      background: $color-primary;
+      color: $color-graybg2;
+
+      &:hover {
+        background: $color-graybg4;
+      }
+    }
+  }
+
+  &.btn-outline {
+    color: $color-text;
+    font-size: $font-size-14;
+    border-radius: 0;
+    border: solid 1px $white-2;
+    min-width: 10rem;
+    height: 4.5rem;
+    background: $white;
+    @include main-flex (center, center);
+
+    .mat-button-wrapper {
+      @include main-flex (center, center);
+    }
+
+    &.btn-delete {
+      .image {
+        width: 1.2rem;
+      }
+    }
+
+    .image {
+      width: 1.6rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.mat-stroked-button {
+  &.mat-button-disabled.mat-button-disabled {
+    color: $white;
+  }
+}
+
+.btn-copy {
+  background: rgba($color-primary, .08);
+  color: $color-primary2;
+  font-size: $font-size-14;
+}
+
+.notifications-btn {
+  @include d-flex;
+  margin-top: 1rem;
+
+
+  .btn {
+    &.btn-decline {
+      background: $color-input-border;
+      color: rgba($color-text, .7);
+      font-size: $font-size-12;
+      padding: 0 5px;
+
+      @media only #{$desktop-md} {
+        font-size: $font-size-14;
+      }
+
+      &.mat-button-toggle-checked {
+        background: darken($color-input-border, 20%);
+      }
+    }
+
+    &.btn-approve {
+      background: $red2;
+      font-size: $font-size-12;
+      padding: 0 5px;
+
+      @media only #{$desktop-md} {
+        font-size: $font-size-14;
+      }
+
+
+      &.mat-button-toggle-checked {
+        background: darken($red2, 20%);
+      }
+    }
+  }
+}
+
+.btn-action {
+  color: $color-text;
+}
+
+::ng-deep {
+  .btn-gray {
+    .mat-button-wrapper {
+      @include main-flex (center, center);
+    }
+  }
+}
+
+.action-submenu {
+  .sub-btn {
+    font-size: $font-size-14;
+    font-weight: $font-weight-medium;
+    transition: all .3s ease-in-out;
+    border-bottom: .1rem solid $color-graybg4;
+    text-align: center;
+    height: 3.3rem;
+    @include main-flex(center, center);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &.sub-received-btn {
+      color: $green-2;
+
+      &:hover {
+        background: $green-2;
+      }
+    }
+
+    &.sub-due-btn {
+      color: $red2;
+
+      &:hover {
+        background: $red2;
+      }
+    }
+
+    &.sub-pending-btn {
+      color: $color-yellow;
+
+      &:hover {
+        background: $color-yellow;
+      }
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.search-area-top {
+  .btn-outline {
+    &.btn-filter {
+      margin-right: 0;
+    }
+  }
+}
+
+.btn-primary {
+  .material-icons-outlined {
+    font-size: $font-size-20
+  }
+
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    left: -2rem;
+    background-size: cover;
+    top: 0;
+    mix-blend-mode: color-burn;
+    opacity: .7;
+    bottom: -100%;
+  }
+
+  &:hover {
+    &::after {
+      @include transition(all .3s ease-in-out);
+      bottom: 0;
+      display: block;
+    }
+  }
+}
+
+.addnew-btn {
+  @include transition(all .3s ease-in-out);
+  @include main-flex (center, center);
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  cursor: pointer;
+
+  .material-icons-outlined {
+    font-size: $font-size-18;
+    margin-right: .5rem;
+  }
+
+  &:hover {
+    color: darken($color-primary, 20%);
+  }
+}

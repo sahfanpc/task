@@ -1,0 +1,81 @@
+<section class="main">
+<nav class="navbar">
+    <aside class="container">
+        <aside class="left-sec">
+            <p class="text">Clients</p>
+        </aside>
+        <aside class="right-sec">
+            <aside class="search">
+                <div class="input-container">
+                    <span class="material-icons-outlined icon">search</span>
+                    <input class="input-field" type="text" placeholder="Search using client name or client id">
+                  
+                </div>
+            </aside>
+
+<button class="button"><i class="fa-solid fa-plus"></i>Add Client</button>
+        </aside>
+    </aside>
+
+     
+      </nav>
+      <nav class="down-navbar">
+        <aside class="container">
+            <aside class="left-sec">
+                <p class="text">All</p>
+            </aside>
+            <aside class="right-sec">
+                <button class="button" mat-button [matMenuTriggerFor]="menu"><span>All members</span>  <i class="fa-solid fa-angle-down"></i></button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Item 1</button>
+                  <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </aside>
+        </aside>
+    
+         
+          </nav>
+
+        <!-- table -->
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+          
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> Client id </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+          
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Company Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+          
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Creation date</th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+          
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Assigned member </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+          
+               <!-- button Column -->
+               <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef> Assigned member </th>
+                <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          
+            <mat-paginator [pageSizeOptions]="[20,34]"
+                           showFirstLastButtons 
+                           aria-label="Select page of periodic elements">
+            </mat-paginator>
+          </div>
+    </section>

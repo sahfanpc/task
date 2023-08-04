@@ -1,0 +1,71 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "typography" as *;
+
+@mixin main-flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin main-flex-all($justify-content, $align-items, $flex-direction) {
+  @include main-flex($justify-content, $align-items);
+  flex-direction: $flex-direction;
+}
+
+@mixin main-flex-1($align-items) {
+  display: flex;
+  align-items: $align-items;
+}
+
+@mixin main-flex-2($justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+}
+
+@mixin main-flex-fdc() {
+  @include main-flex-1(flex-start);
+  flex-direction: column;
+}
+
+@mixin d-block {
+  display: block;
+}
+
+@mixin d-none {
+  display: none;
+}
+
+@mixin d-flex {
+  display: flex;
+}
+
+@mixin align-block ($align-items, $justify-content) {
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin job-table-count {
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
+
+@mixin transition($effect) {
+  transition: $effect;
+  -webkit-transition: $effect;
+  -moz-transition: $effect;
+  -ms-transition: $effect;
+  -o-transition: $effect;
+}
+
+@mixin transform($effect) {
+  transition: $effect;
+  -webkit-transition: $effect;
+  -moz-transition: $effect;
+  -ms-transition: $effect;
+  -o-transition: $effect;
+}
+
+@mixin transform-translateY($positionY) {
+  transform: translateY($positionY);
+}

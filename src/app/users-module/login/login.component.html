@@ -1,0 +1,30 @@
+<section class="main">
+    <aside class="container">
+        <aside class="left-sec">
+            <h1 class="text">HMA</h1>
+        </aside>
+        <aside class="right-sec"></aside>
+        <aside class="card">
+            <aside class="header">
+                <p style="font-size: 2rem;">Welcome Back!</p>
+            </aside>
+            <form action="" class="form" [formGroup]="loginform">
+                <aside class="input">
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Email</mat-label>
+                        <input matInput  formControlName="email">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password">
+                      </mat-form-field>
+                      <aside style="width: 100%;display: flex;justify-content: flex-end;">
+                        <a href="" style="text-decoration: none;color: rgb(0, 110, 255);">Forgot Password?</a>
+                      </aside>
+                     
+                </aside>
+                <button mat-raised-button color="primary" style="width: 9rem;height: 3rem;margin-top: 1.5rem;border-radius: .4rem;" (click)="Submit(loginform)">Submit</button>
+            </form>
+        </aside>
+    </aside>
+</section>

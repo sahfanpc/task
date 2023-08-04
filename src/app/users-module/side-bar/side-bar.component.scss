@@ -1,0 +1,57 @@
+@import '../../../assets/scss/base/mixins';
+.sidebar {
+    width: 110px;
+    height: 100vh;
+    background-color: rgba(6, 67, 180, 0.952);
+    padding: 20px;
+position: fixed;
+margin-left: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 2rem;
+position: relative;
+.company-name{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;position:absolute;
+     top: 2rem;
+
+}
+.main-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    // margin: auto;
+    li {
+        // margin-bottom: 10px;
+        font-size: 1.5rem;
+        color: white;
+        margin: 0;
+        // border: 1px solid black;
+        // padding: .6rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .font-style{
+        color: rgba(255, 255, 255, 0.863);
+        font-size: .65rem;
+        font-weight: 100;
+        // text-align: center;
+      }
+      :hover.li {
+       background-color: rgba(181, 186, 196, 0.705);
+      }
+   
+      
+  }
+  
+  }
