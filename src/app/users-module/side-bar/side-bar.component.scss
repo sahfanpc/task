@@ -1,5 +1,9 @@
 @import '../../../assets/scss/base/mixins';
+@import '../../../assets/scss/base/variables';
 .sidebar {
+  @media only #{$desktop-max-md} {
+    width: 80px;
+  }
     width: 110px;
     height: 100vh;
     background-color: rgba(6, 67, 180, 0.952);
@@ -10,7 +14,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 2rem;
+gap: .8rem;
 position: relative;
 .company-name{
     font-size: 1.6rem;
@@ -19,39 +23,48 @@ position: relative;
      top: 2rem;
 
 }
-.main-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+
+  .lists{
     display: flex;
-    flex-direction: column;
-    gap: .8rem;
-    // margin: auto;
-    li {
-        // margin-bottom: 10px;
-        font-size: 1.5rem;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    .list-items{
+      list-style-type: none;
+      width: 3rem;
+    height: 3rem;
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+      a{
+      i{
+        font-size: 1.8rem;
         color: white;
-        margin: 0;
-        // border: 1px solid black;
-        // padding: .6rem;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
-      .font-style{
-        color: rgba(255, 255, 255, 0.863);
-        font-size: .65rem;
-        font-weight: 100;
-        // text-align: center;
-      }
-      :hover.li {
-       background-color: rgba(181, 186, 196, 0.705);
-      }
-   
-      
+    }
+    &.active{
+      background-color: rgba(248, 243, 243, 0.589);
+    }
+    &:hover{
+background-color: black;
+    }
+    }
+
+    .text-style{
+font-size: .7rem;
+text-align: center;
+color: rgba(255, 255, 255, 0.795);
+    }
+    
   }
-  
+  .fa-regular{
+    position: absolute;
+    bottom: 2.5rem;
+    background-color: rgba(248, 248, 255, 0.911);
+    padding: .6rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+  }
   }

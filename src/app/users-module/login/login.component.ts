@@ -33,7 +33,7 @@ valuetoken:any;
           localStorage.setItem('currenttoken',result.token)
           
           alert("Login Successful")
-          this.router.navigateByUrl('dashboard')
+          this.router.navigateByUrl('dashboard/clients')
         }else{
           alert("User Not Exist")
         }

@@ -13,12 +13,17 @@ import {MatMenuModule} from '@angular/material/menu';
 import { EmployeDetailComponent } from './employe-detail/employe-detail.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DocumentsComponent } from './documents/documents.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 @NgModule({
   declarations: [
     LoginComponent,
     DashboardComponent,
     SideBarComponent,
-    EmployeDetailComponent
+    EmployeDetailComponent,
+    DocumentsComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +35,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ReactiveFormsModule,
     MatMenuModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
     
   ]
 })

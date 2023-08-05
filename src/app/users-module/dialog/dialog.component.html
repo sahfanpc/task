@@ -1,0 +1,119 @@
+<h2 mat-dialog-title style="font-size: 3rem; font-weight: 600;">Details</h2>
+<mat-dialog-content class="mat-typography" style="width: 30rem;">
+    <h2 mat-dialog-title style="font-size: 1.5rem; font-weight: 500;">Details of Company:-</h2>
+    <table class="simple-table">
+        <tbody>
+          <tr >
+            <td>Category</td>
+            <td>{{companydata.category}}</td>
+          </tr>
+          <tr >
+            <td>ClientUpload</td>
+            <td>{{companydata.clientUpload}}</td>
+          </tr>
+          <tr >
+            <td>CreatedDate</td>
+            <td> {{companydata.createdAt}}</td>
+          </tr>
+          <tr >
+            <td>DocTtpe</td>
+            <td> {{companydata.docTtpe}}</td>
+          </tr>
+          <tr >
+            <td>FinancialYear</td>
+            <td>   {{companydata.financialYear}}</td>
+          </tr>
+          <tr >
+            <td>Month</td>
+            <td>{{companydata.month}}</td>
+          </tr>
+          <tr >
+            <td>Point</td>
+            <td>{{companydata.point}}</td>
+          </tr>
+          <tr >
+            <td>Primary</td>
+            <td>{{companydata.primary}}</td>
+          </tr>
+          <tr >
+            <td>SentEmail</td>
+            <td>{{companydata.sendEmail}}</td>
+          </tr>
+          <tr >
+            <td>StakcholderName</td>
+            <td> {{companydata.stakcholderName}}</td>
+          </tr>
+          <tr >
+            <td>Status</td>
+            <td> {{companydata.status}}</td>
+          </tr>
+          <tr >
+            <td>Type</td>
+            <td>  {{companydata.type}}</td>
+          </tr>
+          <tr >
+            <td>UpdatedData</td>
+            <td>{{companydata.updatedAt}}</td>
+          </tr>
+          <tr >
+            <td>Id</td>
+            <td> {{companydata._id}}</td>
+          </tr>
+          <tr >
+            <td>ClientName</td>
+            <td>{{companydata.client.name}}</td>
+          </tr>
+          <tr >
+            <td>ClientId</td>
+            <td> {{companydata.client.clientID}}</td>
+          </tr>
+          <tr >
+            <td>ClientCreatedDate</td>
+            <td>
+                {{companydata.client.createdAt}}</td>
+          </tr>
+          <tr >
+            <td>ClientId</td>
+            <td> {{companydata.client._id}}</td>
+          </tr>
+          <tr >
+            <td>ClientEmail</td>
+            <td>  {{companydata.client.email}}</td>
+          </tr>
+          <tr >
+            <td>ClientCompanyName</td>
+            <td>  {{companydata.client.companyName}}
+               </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 mat-dialog-title style="font-size: 1.5rem; font-weight: 500;">AssignedMembers:-</h2>
+      <table class="simple-table" >
+        <tbody >
+          <tr>
+            <td>CreatedDate</td>
+            <td *ngFor="let item of companydata.assignedMembers">{{item.createdAt}}</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td *ngFor="let item of companydata.assignedMembers">{{item.email}}</td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td *ngFor="let item of companydata.assignedMembers">{{item.name}}</td>
+          </tr>
+          <tr>
+            <td>Item</td>
+            <td *ngFor="let item of companydata.assignedMembers">{{item.updatedAt}}</td>
+          </tr>
+          <tr>
+            <td>Id</td>
+            <td *ngFor="let item of companydata.assignedMembers">{{item._id}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

@@ -16,10 +16,8 @@ import { CustomInterceptor } from './custom.interceptor';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [{
-    provide:HTTP_INTERCEPTORS, useClass:CustomInterceptor,
-    multi:true
-  }],
+  providers: [
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,32 +1,38 @@
 <div class="sidebar">
-    <h1 class="company-name">HMA</h1>
-    <ul class="main-ul">
-        <!-- (mouseover)="Showcontent =true" (mouseleave)="Showcontent =false" -->
-      <ul style="display: flex;flex-direction: column;align-items: center;">
-        <li  matTooltip="Dashboard"  [ngStyle]="{'background-color': textbutton1 ? 'rgba(181, 186, 196, 0.705)' : ''}"
-        matTooltipPosition="right"
-        class="example-button" class="li" (click)="Dashboard()"><i class="fas fa-grip-horizontal"></i></li><p class="font-style">Dashboard</p></ul>
-    <ul style="display: flex;flex-direction: column;align-items: center;">
-        <li  matTooltip="Employee detail"  [ngStyle]="{'background-color': textbutton4 ? 'rgba(181, 186, 196, 0.705)' : ''}"
-        matTooltipPosition="right"
-        class="example-button" class="li" (click)="Employe()"><i class="fas fa-user-tie"></i></li><p class="font-style">Clients</p></ul>
-        <ul style="display: flex;flex-direction: column;align-items: center;">
-      <li  matTooltip="Registered customers"  [ngStyle]="{'background-color': textbutton3 ? 'rgba(181, 186, 196, 0.705)' : ''}"
-      matTooltipPosition="right"
-      class="example-button" class="li" (click)="Customers()"><i class="fa-solid fa-file-lines"></i></li><p class="font-style">Documents</p></ul>
-      <ul style="display: flex;flex-direction: column;align-items: center;">
+  <h1 class="company-name">HMA</h1>
+  <ul class="lists">
+    <li class="list-items">
+      <a href="javascript:void(0)"><i
+        class="fas fa-grip-horizontal"></i></a>
+    </li>
+   <span class="text-style">Dashboard</span>
+  </ul>
+  <ul class="lists">
+    <li class="list-items" routerLinkActive="active">
+      <a href="javascript:void(0)" [routerLink]="['clients']"><i class="fas fa-user-tie"></i></a>
+    </li>
+    <span class="text-style">Clients</span>
+  </ul>
+  <ul class="lists">
+    <li class="list-items" routerLinkActive="active">
+      <a href="javascript:void(0)" [routerLink]="['documents']"><i class="fa-solid fa-file-lines"></i></a>
+    </li>
+    <span class="text-style">Documents</span>
+  </ul>
+  <ul class="lists">
+    <li class="list-items" routerLinkActive="active">
+      <a href="javascript:void(0)"><i
+        class="fa-solid fa-list-check"></i></a>
+    </li>
+    <span class="text-style">Tasks</span>
+  </ul>
+  <ul class="lists">
+    <li class="list-items">
+      <a href="javascript:void(0)" >
+        <i class="fa-solid fa-credit-card" style="font-size: 1.5rem;"></i></a>
+    </li>
+   <span class="text-style">Payments</span>
+  </ul>
+  <i class="fa-regular fa-user"></i>
 
-      <li matTooltip="Add Employees"  [ngStyle]="{'background-color': textbutton2 ? 'rgba(181, 186, 196, 0.705)' : ''}"
-      matTooltipPosition="right"
-      class="example-button" class="li" (click)="Add()"><i class="fa-solid fa-list-check"></i></li><p class="font-style">Tasks</p></ul>
-      <ul style="display: flex;flex-direction: column;align-items: center;">
-      <li matTooltip="Add Employees"  [ngStyle]="{'background-color': textbutton5 ? 'rgba(181, 186, 196, 0.705)' : ''}"
-      matTooltipPosition="right"
-      class="example-button" class="li" (click)="payment()"><i class="fa-solid fa-credit-card" style="font-size: 1.3rem;"></i></li><p class="font-style">Payments</p></ul>
-      <!-- Add more menu items as needed -->
-    </ul>
-    <aside  matTooltip="LogOut"
-      matTooltipPosition="right"
-      class="example-button" class="li"(click)="Logout()" ><i class="fas fa-sign-out-alt"></i></aside>
-      
-  </div>
+</div>

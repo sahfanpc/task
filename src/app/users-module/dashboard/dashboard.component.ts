@@ -9,14 +9,5 @@ import { DatabaceService } from 'src/app/databace.service';
 })
 export class DashboardComponent {
  
-//   userdata:any;
-//   constructor(private router:Router,private db:DatabaceService){}
 
-//   ngOnInit(){
-//     this.values();
-//   }
-// values(){
-// //  this.userdata = this.db.currentuser;
-// }
-  
 }

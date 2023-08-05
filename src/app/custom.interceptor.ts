@@ -13,10 +13,7 @@ export class CustomInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // debugger
-    
-    const localToken = localStorage.getItem('currenttoken');
-    console.log(localToken,"local");
-    request = request.clone({ headers:request.headers.set('Authorization', 'bearer ' + localToken)});
-    return next.handle(request);
+   
+    return next.handle(request);    
   }
 }

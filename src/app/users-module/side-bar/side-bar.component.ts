@@ -28,25 +28,5 @@ export class SideBarComponent {
     }; 
   }
   
-  // navigation buttons
-  Dashboard(){
-    this.router.navigateByUrl('dashboard');
-    this.textbutton1=true;this.textbutton2=false;this.textbutton3=false;this.textbutton4=false;this.textbutton5=false;
-  }
-  Add(){
-  this.textbutton2=true;this.textbutton1=false;this.textbutton3=false;this.textbutton4=false;this.textbutton5=false;
-    this.router.navigateByUrl('dashboard/add-employee')
-  }
-  Customers(){
-    this.textbutton3=true;this.textbutton1=false;this.textbutton2=false;this.textbutton4=false;this.textbutton5=false;
-    this.router.navigateByUrl('dashboard/customer')
-  }
-  Employe(){
-    this.textbutton4=true;this.textbutton1=false;this.textbutton2=false;this.textbutton3=false;this.textbutton5=false;
-    this.router.navigateByUrl('dashboard/employees-list')
-  }
-  payment(){
-    this.textbutton5=true;this.textbutton1=false;this.textbutton2=false;this.textbutton3=false;this.textbutton4=false;
-  }
 
 }
